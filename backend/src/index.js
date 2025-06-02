@@ -18,12 +18,14 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://theta-chat.vercel.app"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",                  
+    "https://theta-chat.vercel.app",
+    "https://theta-chat-ax3q18bmb-arpits-projects-9b516d74.vercel.app" 
+  ],
+  credentials: true,
+}));
 
 
 app.use("/api/auth", authRoutes);

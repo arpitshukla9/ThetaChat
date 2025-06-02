@@ -9,7 +9,8 @@ const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:5173",          
-      "https://theta-chat.vercel.app"   
+      "https://theta-chat.vercel.app",
+      "https://theta-chat-ax3q18bmb-arpits-projects-9b516d74.vercel.app"
     ],
     credentials: true
   },
