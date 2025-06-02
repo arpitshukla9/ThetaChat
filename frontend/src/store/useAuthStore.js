@@ -6,6 +6,9 @@ const BASE_URL = import.meta.env.MODE === "development"
   ? "http://localhost:5001/api"
   : "https://thetachat.onrender.com/api";
 
+const SOCKET_URL = import.meta.env.MODE === "development"
+  ? "http://localhost:5001"
+  : "https://thetachat.onrender.com";
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
@@ -84,23 +87,25 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
-  connectSocket: () => {
-    const { authUser } = get();
-    if (!authUser || get().socket?.connected) return;
+connectSocket: () => {
+  const { authUser } = get();
+  if (!authUser || get().socket?.connected) return;
 
-    const socket = io(BASE_URL, {
-      query: {
-        userId: authUser._id,
-      },
-    });
-    socket.connect();
+  const socket = io(SOCKET_URL, {
+    query: {
+      userId: authUser._id,
+    },
+    withCredentials: true,
+  });
 
-    set({ socket: socket });
+  socket.connect();
 
-    socket.on("getOnlineUsers", (userIds) => {
-      set({ onlineUsers: userIds });
-    });
-  },
+  set({ socket });
+
+  socket.on("getOnlineUsers", (userIds) => {
+    set({ onlineUsers: userIds });
+  });
+},
   disconnectSocket: () => {
     if (get().socket?.connected) get().socket.disconnect();
   },
