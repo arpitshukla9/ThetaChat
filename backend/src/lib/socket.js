@@ -10,7 +10,7 @@ const io = new Server(server, {
     origin: [
       "http://localhost:5173",          
       "https://theta-chat.vercel.app",
-      "https://theta-chat-ax3q18bmb-arpits-projects-9b516d74.vercel.app"
+       "https://theta-chat-jhgbq4nyx-arpits-projects-9b516d74.vercel.app"
     ],
     credentials: true
   },
