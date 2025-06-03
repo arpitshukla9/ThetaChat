@@ -15,15 +15,16 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 const __dirname = path.resolve();
-
 app.use(cors({
   origin: [
     "http://localhost:5173",                  
     "https://theta-chat.vercel.app",
-    "https://theta-chat-jhgbq4nyx-arpits-projects-9b516d74.vercel.app"
+    "https://theta-chat-jhgbq4nyx-arpits-projects-9b516d74.vercel.app",
+    "https://www.thetachat.com"
   ],
   credentials: true,
 }));
+
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
