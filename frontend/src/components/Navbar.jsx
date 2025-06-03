@@ -13,11 +13,19 @@ const Navbar = () => {
       <div className="container mx-auto px-4 h-16">
         <div className="flex items-center justify-between h-full">
           <div className="flex items-center gap-8">
-            <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-all">
-              <div className="size-9 rounded-lg bg-primary/10 flex items-center justify-center">
-                <MessageSquare className="w-5 h-5 text-primary" />
+            <Link
+              to="/"
+              className="flex items-center gap-2.5 hover:opacity-80 transition-all"
+            >
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center">
+                <img
+                  src="/ThetaChat-logo.png"
+                  alt="ThetaChat Logo"
+                  className="w-14 h-14 rounded-full object-cover"
+                />
               </div>
-              <h1 className="text-lg font-bold">ThetaChat</h1>
+
+              <h1 className="font-roxborough font-semibold">ThetaChat</h1>
             </Link>
           </div>
 

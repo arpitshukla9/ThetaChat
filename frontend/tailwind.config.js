@@ -4,7 +4,11 @@ import daisyui from "daisyui";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+      roxborough: ['RoxboroughCF', 'serif'],
+    },
+  }
   },
   plugins: [daisyui],
   daisyui: {
@@ -44,3 +48,4 @@ export default {
     ],
   },
 };
+      
